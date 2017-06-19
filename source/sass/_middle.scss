@@ -1,0 +1,30 @@
+/*=====================
+  middle
+=====================*/
+.header-img-area {
+  height: 500px;
+}
+
+.inner-container {
+  max-width: $breakpoint-middle;
+}
+
+.header-menu-area {
+  display: block;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.header-menu-btn {
+  display: none;
+}
+
+.header-menu {
+
+  @at-root {
+    #{&}__item {
+      display: inline-block;
+      padding: 0;
+    }
+  }
+}

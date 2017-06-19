@@ -1,0 +1,70 @@
+/*=====================
+  base
+=====================*/
+
+// color
+.black {
+  color: $black !important;
+}
+
+.white {
+  color: $white !important;
+}
+
+.gray {
+  color: $gray !important;
+}
+
+.red {
+  color: $red !important;
+}
+
+.blue {
+  color: $blue !important;
+}
+
+.green {
+  color: $green !important;
+}
+
+.bg-black {
+  background: $black !important;
+}
+
+.bg-white {
+  background: $white !important;
+}
+
+.bg-gray {
+  background: $gray !important;
+}
+
+.bg-red {
+  background: $red !important;
+}
+
+.bg-blue {
+  background: $blue !important;
+}
+
+.bg-green {
+  background: $green !important;
+}
+
+
+// text
+.x-large {
+  @include origin-font-size(20px);
+}
+
+.large {
+  @include origin-font-size(16px);
+}
+
+.small {
+  @include origin-font-size(8px);
+}
+
+.x-small {
+  @include origin-font-size(6px);
+}

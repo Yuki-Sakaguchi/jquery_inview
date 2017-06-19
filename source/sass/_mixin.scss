@@ -1,0 +1,38 @@
+//*=====================
+//  mixin
+//=====================*/
+
+//
+// remとpxを使ったfont-size設定(IE対応)
+// @param $size
+// @pagam $rhythm-unit
+//
+@mixin origin-font-size($size, $rhythm-unit: "rem") {
+    @include output-rhythm(font-size, convert-length($size, $rhythm-unit));
+}
+
+//
+// remとpxを使ったline-height設定(IE対応)
+// @param $size
+// @pagam $rhythm-unit
+//
+@mixin origin-line-height($size, $rhythm-unit: "rem") {
+    @include output-rhythm(line-height, convert-length($size, $rhythm-unit));
+}
+
+
+//
+// @keyframesを作成するmixin
+// @param $animation-name
+//
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }
+  @keyframes $animation-name {
+    @content;
+  }
+}

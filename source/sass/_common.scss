@@ -1,0 +1,208 @@
+// =====================
+// index
+// - default
+// - layout
+// - text
+// - menu
+// =====================
+
+/*=====================
+  default
+=====================*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: percentage($base-font-size / 16px);// font-size px to par
+  font-family: $main_font_family;
+}
+
+a {
+  color: $font-color;
+  text-decoration: none;
+}
+
+/*=====================
+  layout
+=====================*/
+.wrapper {
+
+}
+
+.container {
+  padding: 50px 0;
+}
+
+.inner-container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 15px;
+}
+
+.header-area {
+  margin-top: 50px;
+}
+
+.title-area {
+  padding-bottom: 50px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.header-img-area {
+  height: 200px;
+  background-image: url($img+"main2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.header-menu-area {
+  display: none;
+
+  &.sp-menu {
+    text-align: center;
+    padding: 30px 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+}
+
+.footer-area {
+  padding: 60px;
+}
+
+.info-item {
+  width: 31%;
+  display: inline-block;
+  margin-right: 1%;
+  vertical-align: top;
+}
+
+/*=====================
+  text
+=====================*/
+.main-title {
+  @include origin-font-size(40px);
+  text-align: center;
+}
+
+.sub-title {
+  @include origin-font-size(20px);
+  text-align: center;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+
+.text-content {
+  @include origin-font-size(16px);
+  @include origin-line-height(25px);
+}
+
+.info-title {
+  @include origin-font-size(20px);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.info-content {
+  @include origin-font-size(12px);
+  @include origin-line-height(20px);
+}
+
+.copylight {
+    margin-top: 60px;
+    display: block;
+    text-align: center;
+}
+
+/*=====================
+  menu
+=====================*/
+.header-menu {
+
+  @at-root {
+    #{&}__item {
+      display: block;
+      padding: 30px;
+
+      a {
+        @include origin-font-size(12px);
+        padding: 10px 20px;
+        margin: 0 20px;
+        border-bottom: 2px solid transparent;
+        @include transition(0.5s);
+
+        &:hover {
+          border-bottom: 2px solid $black;
+          @include transition(0.5s);
+        }
+      }
+    }
+  }
+}
+
+.is-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $white;
+  z-index: 99999;
+}
+
+.header-menu-btn {
+  display: block;
+  position: fixed;
+  top: 0px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 99999;
+
+  span {
+    border-top: 1px solid $black;
+    display: block;
+    margin-top: 7px;
+    @include transition(0.4s);
+  }
+}
+
+.header-menu-btn.active {
+  span:nth-of-type(1) {
+    @include transform(translateY(7px) rotate(-45deg));
+  }
+
+  span:nth-of-type(2) {
+    @include opacity(0);
+  }
+
+  span:nth-of-type(3) {
+    @include transform(translateY(-9px) rotate(45deg));
+  }
+}
+
+/*=====================
+  inview fade in
+=====================*/
+.inview-content {
+  @include opacity(0);
+  @include translate(0, 30px);
+  @include transition(1s);
+}
+
+.inview-content-fadeIn {
+  @include opacity(1);
+  @include translate(0, 0);
+}
